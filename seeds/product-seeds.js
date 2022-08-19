@@ -56,7 +56,7 @@ const productData = [
     price: '99.99',
     desired_price: '89.99',
     category_id: '8',
-    user_id: '2',
+    user_id: '1',
     image_name: '2022813213943.png',
     tagIds: [1],
   },
