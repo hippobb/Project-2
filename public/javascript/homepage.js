@@ -9,3 +9,20 @@ for (var i = 0; i < category.length; i++) {
   list_item.innerHTML = category[i].category_name;
   left_list.appendChild(list_item);
 }
+
+async function addHandler(event) {
+  event.preventDefault();
+  product_id=event.target.id;  
+  console.log("*************************>>>>",product_id);
+  const response = await fetch("/shopping/"+product_id, {
+    method: 'POST',
+    body: JSON.stringify({
+      product_id
+    }),
+  })
+  
+  document.location.replace('/dashboard');
+
+}
+
+document.getElementById('display').addEventListener('click', addHandler);
