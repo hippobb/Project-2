@@ -1,10 +1,9 @@
-// import modelst
+// import models
 const Product = require('./Product');
 const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 const User = require('./User');
-const Shopping = require('./Shopping');
 
 // Products belongsTo Category
 
@@ -18,25 +17,8 @@ Product.belongsTo(User, {
 
 User.hasMany(Product, {
   foreignKey: 'user_id'
-});
+})
 
-Shopping.belongsTo(Product, {
-  foreignKey: 'product_id'
-});
-
-/*
-Product.belongsTo(Shopping, {
-  foreignKey: 'product_id'
-});
-/*
-Shopping.hasMany(Product, {
-  foreignKey: 'product_id'
-});
-
-Product.belongsTo(Shopping, {
-  foreignKey: 'product_id's
-});
-*/
 // Categories have many Products
 
 Category.hasMany(Product, {
@@ -63,5 +45,4 @@ module.exports = {
   Tag,
   ProductTag,
   User,
-  Shopping,
 };
